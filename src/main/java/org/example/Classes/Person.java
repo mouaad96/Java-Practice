@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Classes;
 
 public abstract class Person {
     protected String cin;

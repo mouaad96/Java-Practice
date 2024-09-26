@@ -1,6 +1,9 @@
-package org.example;
+package org.example.Classes;
+import org.example.Interfaces._Student;
 
-public class Student extends Person {
+import java.util.ArrayList;
+
+public class Student extends Person implements _Student {
     private String cne;
     private boolean hasScholarShip;
     private Program registeredProgram;
@@ -11,7 +14,6 @@ public class Student extends Person {
         this.hasScholarShip = hasScholarShip;
         this.registeredProgram = registeredProgram;
     }
-
 
     public String getCne() {
         return cne;
@@ -48,5 +50,30 @@ public class Student extends Person {
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public void addStudent(_Student student) {
+
+    }
+
+    @Override
+    public _Student findStudent(ArrayList<_Student> students, String cne) {
+        return null;
+    }
+
+    @Override
+    public void updateStudent(String cne) {
+
+    }
+
+    @Override
+    public void deleteStudent(String cne) {
+
+    }
+
+    @Override
+    public void showStudent() {
+
     }
 }

@@ -1,12 +1,18 @@
 package org.example;
 
 public abstract class Person {
-     private String cin;
-     private String firstName;
-     private String lastName;
-     private int age;
-     private  enum  nationality {MOROCCAN , FOREIGNER};
+    protected String cin;
+    protected String firstName;
+    protected String lastName;
+    protected int age;
+    protected  enum  nationality {MOROCCAN , FOREIGNER};
 
+    public Person(String cin, String lastName, String firstName, int age) {
+        this.cin = cin;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.age = age;
+    }
 
     public String getCin() {
         return cin;

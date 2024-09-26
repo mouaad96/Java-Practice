@@ -1,9 +1,9 @@
 package org.example;
 
 public class University {
-    private String name;
-    private String address;
-    private String city;
+    protected String name;
+    protected String address;
+    protected String city;
 
     public University(String name, String address, String city) {
         this.name = name;

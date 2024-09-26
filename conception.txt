@@ -1,0 +1,84 @@
+Classes:
+University
+    -name
+    -address
+    -City
+
+ToString() show University infos 
+
+*****************************************************
+
+Person
+    -firstName
+    -lastName
+    -age
+    -Cin
+    -nationality enum(moroccan/ foreigner)
+
+
+*****************************************************
+
+Program
+    -programName
+    -fieldOfStudy
+    -List<Module>
+
+AddProgram()
+Update()
+Delete()
+Show()
+*********************************************
+
+Module
+    -moduleName
+
+Add()
+Update()
+Delete()
+Show()
+*********************************************
+
+Student
+    -Cne
+    -hasScholarShip: boolean
+    -registeredProgram : Program
+    
+
+Add()
+Update()
+Delete()
+Show()
+*********************************************
+
+Mark
+    -idStudent
+    -idModule
+    -Mark 
+    
+Add()
+Update()
+Delete()
+Show()
+*********************************************
+
+
+Professor
+    -id
+    -List<Program>
+
+Add()
+Update()
+Delete()
+Show()
+*********************************************    
+
+Group
+    -id
+    -grpName
+    -List<Student>
+
+Add()
+Update()
+Delete()
+Show()
+*********************************************    

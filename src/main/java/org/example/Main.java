@@ -12,13 +12,28 @@ public class Main {
         ArrayList<Module> modules = new ArrayList<>();
 
         University u = new University("uni1","hawhaw","berkan");
-
-        org.example.Classes.Module m1 = new Module("1554", "web");
+        Administration admin = new Administration();
+        Module m1 = new Module("1554", "web");
         modules.add(m1);
         Program p1 = new Program("big btata", "informatique", modules);
-        Student s1 = new Student("1544",false,p1,"1544","mouad","samati",35);
+        Student s1 = admin.createStudent("1111","1515","hamza","hkim",25,true,p1);
+        Student s2 = admin.createStudent("2222","1221","saad","hehe",26,false,p1);
+
+        ArrayList<Student> students = new ArrayList<>();
 
 
-        System.out.println(s1.toString());
+
+        admin.addStudent(s1,students);
+        admin.addStudent(s2,students);
+        admin.updateStudent("2222", students, "soso", "hoho","1212",31,p1, false);
+        admin.showStudents(students);
+        //System.out.println("Student after delete");
+       // admin.deleteStudent("1111",students);
+        //admin.showStudents(students);
+
+
+
+
+
     }
 }

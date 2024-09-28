@@ -14,6 +14,8 @@ public abstract class Person {
         this.age = age;
     }
 
+    public Person(){}
+
     public String getCin() {
         return cin;
     }
@@ -43,7 +45,7 @@ public abstract class Person {
     }
 
     public void setAge(int age) {
-        this.age = age;
+           this.age = age;
     }
 
 

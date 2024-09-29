@@ -1,40 +1,74 @@
 package org.example.Classes;
 
-public class Mark {
-    private Student cne;
-    private Module idModule;
-    private double mark;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public  class Mark {
+    private Student student;
+    private ArrayList<Module> modules;
+    private HashMap<Module, Double> studentMarks = new HashMap<Module, Double>();
+    private double result;
 
 
-    public Mark(Student cne, Module idModule, double mark) {
-        this.cne = cne;
-        this.idModule = idModule;
-        this.mark = mark;
+
+    public Mark(Student student, ArrayList<Module> modules, HashMap<Module, Double> studentMarks, double result) {
+        this.student = student;
+        this.modules = modules;
+        this.studentMarks = studentMarks;
+        this.result = result;
     }
+
+    // methods
+    //add
+    public void addStudentMarks(Module module, double mark){
+        studentMarks.put(module,mark);
+    }
+
+    public void getStudentResult(){
+        double mark = 0;
+        double nbModules = 0;
+        for(Module module : studentMarks.keySet()){
+            mark += studentMarks.get(module);
+            nbModules++;
+        }
+
+        System.out.println("the result: " + mark / nbModules);
+
+    }
+
+
 
     public Mark(){}
 
     public Student getCne() {
-        return cne;
+        return student;
     }
 
-    public void setCne(Student cne) {
-        this.cne = cne;
+    public void setCne(Student student) {
+        this.student = student;
     }
 
-    public Module getIdModule() {
-        return idModule;
+    public ArrayList<Module> getIdModule() {
+        return  modules;
     }
 
-    public void setIdModule(Module idModule) {
-        this.idModule = idModule;
+    public void setModules(ArrayList<Module> modules) {
+        this.modules = modules;
     }
 
-    public double getMark() {
-        return mark;
+    public HashMap<Module, Double> getStudentMarks() {
+        return studentMarks;
     }
 
-    public void setMark(double mark) {
-        this.mark = mark;
+    public void SetStudentMarks(HashMap<Module, Double> studentMarks) {
+        this.studentMarks = studentMarks;
     }
+
+    public double getResult() {
+        return result;
+    }
+    public void setResult(double result) {
+        this.result = result;
+    }
+
 }

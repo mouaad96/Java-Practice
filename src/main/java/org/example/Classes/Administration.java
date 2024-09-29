@@ -4,8 +4,7 @@ import org.example.Interfaces.Admin;
 
 import java.util.ArrayList;
 
-public class Administration implements Admin {
-
+public final class Administration implements Admin {
 
 
     public Student findStudent(ArrayList<Student> students, String cne) {
@@ -17,25 +16,25 @@ public class Administration implements Admin {
         return null;
     }
 
-    public Student createStudent(String cne, String cin, String firstName, String lastName, int age , boolean hasScholarShip, Program program){
+    public Student createStudent(String cne, String cin, String firstName, String lastName, int age , boolean hasScholarShip, Program program ,Mark mark){
         if(age > 30){
             System.out.println("age must be less than 30 for student with cne " + cne);
             return null;
         }
        else
         {
-            return new Student(cne,hasScholarShip,program,cin,firstName,lastName,age);
+            return new Student(cne,hasScholarShip,program,cin,firstName,lastName,age, mark);
         }
     }
 
-    public  void addStudent(Student student, ArrayList<Student> students) {
+    public  void addStudent(Student student, Group grp) {
         if(student == null){
             return;
         }
-        Student foundSt = findStudent(students,student.getCne());
+        Student foundSt = findStudent(grp.getStudentsList() ,student.getCne());
        if(foundSt != null && foundSt.getCne().equals(student.getCne()))
            System.out.println("already bro");
-        else students.add(student);
+        else grp.getStudentsList().add(student);
     }
 
 

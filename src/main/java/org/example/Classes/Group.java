@@ -39,4 +39,6 @@ public class Group {
     public void setStudentsList(ArrayList<Student> studentsList) {
         this.studentsList = studentsList;
     }
+
+
 }

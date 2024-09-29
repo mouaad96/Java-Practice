@@ -5,12 +5,14 @@ public class Student extends Person {
     private String cne;
     private boolean hasScholarShip;
     private Program registeredProgram;
+    private Mark mark;
 
-    public Student(String cne, boolean hasScholarShip, Program registeredProgram, String cin, String firstName, String lastName, int age) {
+    public Student(String cne, boolean hasScholarShip, Program registeredProgram, String cin, String firstName, String lastName, int age, Mark mark) {
         super(cin, firstName, lastName, age);
         this.cne = cne;
         this.hasScholarShip = hasScholarShip;
         this.registeredProgram = registeredProgram;
+        this.mark = mark;
     }
     public Student(){
         super();
@@ -30,6 +32,27 @@ public class Student extends Person {
 
     public void setHasScholarShip(boolean hasScholarShip) {
         this.hasScholarShip = hasScholarShip;
+    }
+
+    public Mark getMark() {
+        return mark;
+    }
+
+    public void setMark(Mark mark) {
+        this.mark = mark;
+    }
+
+    public  void showStudentMarks(){
+        if (mark == null || mark.getStudentMarks() == null || mark.getStudentMarks().isEmpty()) {
+            System.out.println("No student marks available.");
+            return;  // Exit the method early
+        }
+        System.out.println("Student: " + getFirstName() + " " + getLastName());
+        for (Module i : mark.getStudentMarks().keySet()) {
+            System.out.println("module Name: " + i.getModuleName() + " mark: " + mark.getStudentMarks().get(i));
+        }
+
+        mark.getStudentResult();
     }
 
     public Program getRegisteredProgram() {
